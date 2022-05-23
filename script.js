@@ -38,6 +38,31 @@ if (!enter) {
     confirmUpper = confirm("Do you want your password to contain uppercase letters?")
 };
 
+if (!confirmSpecial && !confirmNumber && !confirmLower && !confirmUpper) {
+    yesNo = alert("Please choose a character type to include.");
+
+}
+
+else if (confirmSpecial && confirmNumber && confirmUpper && confirmLower) {
+    yesNo = special.concat(number, upperCase, lowerCase);
+}
+
+else if (confirmSpecial && confirmNumber && confirmUpper) {
+    yesNo = special.concat(number, upperCase);
+}
+
+else if (confirmSpecial && confirmNumber && confirmLower) {
+    yesNo = special.concat(number, lowerCase);
+}
+
+else if (confirmSpecial && confirmLower && confirmUpper) {
+    yesNo = special.concat(lowerCase, upperCase);
+}
+
+else if (confirmNumber && confirmLower && confirmUpper) {
+    yesNo = number.concat(lowerCase, upperCase);
+}
+
 }
 
 // Get references to the #generate element
