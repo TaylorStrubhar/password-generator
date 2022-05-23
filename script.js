@@ -25,17 +25,23 @@ generateBtn.addEventListener("click", function () {
 });
 
 function writePassword() {
-    
+enter = parseInt(prompt("How many characters would you like in your password? Please choose a number between 8 and 128."));
+if (!enter) {
+    alert("Please enter a number!");
+} else if (enter < 8 || enter > 128) {
+    enter = parseInt(prompt("You must enter a number between 8 and 128!"));
+
+} else {
+    confirmSpecial = confirm("Do you want your password to contain special characters?")
+    confirmNumber = confirm("Do you want your password to contain numeric values?");
+    confirmLower = confirm("Do you want your password to contain lowercase letters?");
+    confirmUpper = confirm("Do you want your password to contain uppercase letters?")
+};
+
 }
 
 // Get references to the #generate element
- {
-    var upperCase = window.prompt("Would you like to include upper case characters?");
-    var lowerCase = window.prompt("Would you like to include lower case characters?");
-    var numeric = window.prompt("Would you like to include numeric characters?");
-    var specialChar = window.prompt("Would you like to include special characters?");
-    var charactersLength = window.prompt("How many characters would you like to include in your password? (between 8 and 128)")
-};
+
 
 // Write password to the #password input
 function writePassword() {
