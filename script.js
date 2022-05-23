@@ -6,33 +6,30 @@ var userUppercase;
 var userLowercase;
 var userNumeric;
 var userSpecial;
+var yesNo
+var generateBtn = document.querySelector("#generate");
 
 // Password Variables
 
 upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 
 lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-// I had to look up how to add "[, ] and \"
+// I had to look up how to add "[, ] and \" on fullstack
 special = [" ", "!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"];
 
 number = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
+generateBtn.addEventListener("click", function () {
+    pwstring = writePassword();
+    document.getElementById("password").placeholder = pwstring;
+});
 
-
-generateBtn.addEventListener("click", writePassword);
-
-function writePassword(length) {
-    var result = "";
-    var upperCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    var lowerCharacters = "abcdefghijklmnopqrstuvwxyz";
-    var numericCharacters = "0123456789";
-    var specialCharacters = " !#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
+function writePassword() {
     
 }
 
-
 // Get references to the #generate element
-var generateBtn = document.querySelector("generate"); {
+ {
     var upperCase = window.prompt("Would you like to include upper case characters?");
     var lowerCase = window.prompt("Would you like to include lower case characters?");
     var numeric = window.prompt("Would you like to include numeric characters?");
@@ -42,7 +39,7 @@ var generateBtn = document.querySelector("generate"); {
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
+  var password = writePassword();
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
